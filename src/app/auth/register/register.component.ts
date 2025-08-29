@@ -1,10 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../auth-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
-  imports: [],
+  imports: [
+    CommonModule,
+    
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -30,7 +34,7 @@ export class RegisterComponent {
     const { name, email, password } = this.registrationForm.value;
 
     this.authService.register(name, email, password);
-    
+
   }
 
 }
