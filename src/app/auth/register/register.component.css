@@ -1,0 +1,42 @@
+.register-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo{
+  display: block;
+  margin: auto;
+}
+
+.register-container h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.register-container form div {
+  margin-bottom: 1rem;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 0.7rem;
+  color: #FFF;
+  /* background-color: rgb(57, 96, 203); */
+  background-color: #e83e3e;
+  border-radius: 5px;
+  border: none;
+}
+
+input{
+    width: 97.5%;
+    margin-top: 1%;
+    height: 30px;
+}
+
+.login-redirect{
+  margin-top: 1.2rem;
+}

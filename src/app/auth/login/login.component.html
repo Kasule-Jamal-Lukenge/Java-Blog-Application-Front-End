@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="login-container">
+    
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        
+        <img src="fanatic-logo.png" alt="App Logo" class="logo" height="70px" width="70px" class="logo" />
+        <h4 style="text-align:center">Please Provide Your Credentials</h4>
+        <div>
+            <label for="username">Username:</label><br>
+            <input type="text" formControlName="username" id="username" placeholder="Please Provide Your Username...">
+            <small *ngIf="loginForm.controls['username']?.touched && loginForm.controls['username']?.invalid" style="color:red;">
+                Username is required
+            </small>
+        </div>
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="password" formControlName="password" id="password" placeholder="Please Enter Your Password..."/>
+            <small *ngIf="loginForm.controls['password']?.touched && loginForm.controls['password']?.invalid" style="color:red;">
+                Password is required
+            </small>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <p>Don't Have An Account? <a routerLink="/register">Sign Up Now</a></p>
+    </form>
+</div>

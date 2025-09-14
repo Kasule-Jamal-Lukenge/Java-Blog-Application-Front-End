@@ -1,1 +1,30 @@
-<h4>Register Now</h4>
+<div class="register-container">
+    <img src="fanatic-logo.png" class="logo" height="70px" width="70px">
+    <h4>Please Fill This Form To Register</h4>
+    <form [formGroup]="registrationForm" (ngSubmit)="submit()">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" formControlName="username" placeholder="Enter A Username..."/>
+            <small *ngIf="registrationForm.controls['username'].touched && registrationForm.controls['username'].invalid" style="color:red;">
+                Username is required.
+            </small>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email" placeholder="Enter A Valid Email..."/>
+            <small *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].invalid" style="color:red;">
+                Email is required.
+            </small>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="Enter A Password..."/>
+            <small *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].invalid" style="color:red;">
+                Password is required.
+            </small>
+        </div>
+
+        <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+        <p class="login-redirect">Already Have An Account? <a routerLink="/login">Login Here</a></p>
+    </form>
+</div>

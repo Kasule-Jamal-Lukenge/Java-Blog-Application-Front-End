@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <a routerLink="/home" class="logo">Fanatic Banter</a>
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/posts">Posts</a>
+        </li>
+        <ng-container *ngIf="!isLoggedIn(); else loggedInMenu">
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/register">Register</a></li>
+        </ng-container>
+        <ng-template #loggedInMenu>
+            <li><a routerLink="/post-form">New Post</a></li>
+            <li><button (click)="logout()" class="logout-btn">Logout</button></li>
+        </ng-template>
+    </ul>
+</nav>

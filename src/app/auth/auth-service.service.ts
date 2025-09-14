@@ -67,7 +67,16 @@ export class AuthService {
     return localStorage.getItem('token');
   }
   private hasToken(): boolean{
-    return !!localStorage.getItem('token');
+    // return !!localStorage.getItem('token');
+    if(this.isBrowser()){
+      return !!localStorage.getItem('token');
+    }
+    return false;
+  }
+
+  //helper function to check if we are in a browser
+  private isBrowser(): boolean{
+    return typeof window !== 'undefined' && typeof localStorage != 'undefined';
   }
 
 }
