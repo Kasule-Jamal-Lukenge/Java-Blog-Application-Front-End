@@ -1,6 +1,6 @@
 .register-container {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 100px auto;
   padding: 1.5rem;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -34,7 +34,15 @@
 input{
     width: 97.5%;
     margin-top: 1%;
-    height: 30px;
+    height: 35px;
+    border-radius: 4px;
+    outline: none;
+    border: solid 1px #ccc;
+    padding-left: 10px; 
+}
+
+input:focus{
+  border: solid 2px #e83e3e; 
 }
 
 .login-redirect{
