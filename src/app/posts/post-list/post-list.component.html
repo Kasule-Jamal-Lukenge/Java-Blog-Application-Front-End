@@ -1,8 +1,8 @@
 <div class="posts-container">
     <h4>All Posts</h4>
-    <div>
-        <h3><a [routerLink]="[]"></a></h3>
-        <p></p>
-        <small></small>
+    <div *ngFor="let post of posts()">
+        <h3><a [routerLink]="['/posts', post.id]">{{post.title}}</a></h3>
+        <p>{{ post.content | slice:0:100 }}...</p>
+        <small>By {{post.author}} on {{ post.createdAt | date }}</small>
     </div>
 </div>
