@@ -6,16 +6,16 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { authGuard } from './auth/auth.guard';
 import { PostFormComponent } from './posts/post-form/post-form.component';
-import { CommentsComponent } from './comments/comments/comments.component';
+// import { CommentsComponent } from './comments/comments/comments.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: '', redirectTo: 'posts', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'posts', component: PostListComponent},
     {path: 'posts/:id', component: PostDetailComponent, canActivate: [authGuard]},
     {path: 'post-form', component: PostFormComponent, canActivate: [authGuard]},
-    {path: 'comments', component: CommentsComponent, canActivate: [authGuard]},
-    {path: '**', redirectTo: 'home'}
+    // {path: 'comments', component: CommentsComponent, canActivate: [authGuard]},
+    // {path: '**', redirectTo: 'home'}
 ];
