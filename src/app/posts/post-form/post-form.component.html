@@ -1,1 +1,31 @@
-<p>post-form works!</p>
+<div class="form-container">
+  <h2>Create New Post</h2>
+
+  <form [formGroup]="postForm" (ngSubmit)="submit()">
+    <div>
+      <label for="title">Title</label>
+      <input id="title" formControlName="title" type="text" />
+      <div *ngIf="postForm.controls['title'].invalid && postForm.controls['title'].touched">
+        Title is required
+      </div>
+    </div>
+
+    <div>
+      <label for="content">Content</label>
+      <textarea id="content" formControlName="content"></textarea>
+      <div *ngIf="postForm.controls['content'].invalid && postForm.controls['content'].touched">
+        Content is required
+      </div>
+    </div>
+
+    <div>
+      <label for="author">Author</label>
+      <input id="author" formControlName="author" type="text" />
+      <div *ngIf="postForm.controls['author'].invalid && postForm.controls['author'].touched">
+        Author is required
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="postForm.invalid">Submit</button>
+  </form>
+</div>
